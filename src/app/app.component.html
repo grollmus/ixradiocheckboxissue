@@ -1,0 +1,19 @@
+<h2>"jumping" ix-radio and ix-checkbox issue in 2.6.1 (and likely in 2.7.0 too)</h2>
+<div style="border:1px solid black; margin: 20px; padding: 10px;">
+    <p>1.) Single radio button jumps several vertical pixels when clicked. With or without wrapped in div. Can also be seen in 2.7.0 documentation online <a href="https://ix.siemens.io/docs/controls/radio?current-tab=development#basic" target="_blank">link</a></p>
+    <ix-radio label="IX no wrapper" name="ixnowrap"></ix-radio>
+    <p>2.) same jumping behaviour when clicked, but only when wrapped in div (or in tst-ui-radio in our case).</p>
+    <ix-radio-group label="Some Options">
+        <div><ix-radio label="Option 1 no wrap" name="opt1"></ix-radio></div>
+        <div><ix-radio label="Option 2 no wrap" name="opt2"></ix-radio></div>
+        <div><ix-radio label="Option 3 no wrap" name="opt3"></ix-radio></div>
+    </ix-radio-group>
+    <p>3.) wrapped works only when style display:block is applied.</p>
+    <ix-radio-group label="Some Options">
+        <div><ix-radio label="Option 1 div wrap" name="opt1" style="display:block;"></ix-radio></div>
+        <div><ix-radio label="Option 2 div wrap" name="opt2" style="display:block;"></ix-radio></div>
+        <div><ix-radio label="Option 3 div wrap" name="opt3" style="display:block;"></ix-radio></div>
+    </ix-radio-group>
+    <p>4.) checkbox jumps not itself, but height is changed a few pixels when clicked (see border below) resulting in controls below jumping up and down</p>
+    <ix-checkbox label="IX check no wrap" name="check1"></ix-checkbox>
+</div>
